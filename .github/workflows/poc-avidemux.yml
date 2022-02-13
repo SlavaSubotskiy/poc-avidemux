@@ -2,7 +2,7 @@ name: PoC AviDemux
 on: [push]
 jobs:
   PoC-AviDemux:
-    runs-on: jlesage/avidemux
+    runs-on: ubuntu-latest  # jlesage/avidemux:v1.4.0
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
