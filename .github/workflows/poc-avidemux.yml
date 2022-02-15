@@ -7,7 +7,7 @@ jobs:
       image: jlesage/avidemux:v1.4.0
     env:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
-      GDRIVE_PARENT_FOLDER: 1ZWvA_FvC1GrHcDg8hdid6NsgLLqljvFn
+      GDRIVE_PARENT_FOLDER: 0BymZKIdYQ2OKT1QzaU1YMDVFVGM
       GDRIVE_HOME: /github/home/.gdrive
     steps:
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
