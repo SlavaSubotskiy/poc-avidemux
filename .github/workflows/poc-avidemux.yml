@@ -11,6 +11,8 @@ jobs:
       GDRIVE_PARENT_FOLDER: 0BymZKIdYQ2OKT1QzaU1YMDVFVGM
       GDRIVE_HOME: /github/home/.gdrive
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
       - run: mkdir "${GDRIVE_HOME}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_HOME}"/GDRIVE_SERVICE_ACCOUNT.json'
