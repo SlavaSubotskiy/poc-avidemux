@@ -17,7 +17,7 @@ jobs:
         run: |
           ls -la $GITHUB_WORKSPACE
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: apk add --update py-pip curl
+      - run: apk add --update py-pip curl jq
       - run: pip install gdown
       - run: mkdir source_video
       - run: |
