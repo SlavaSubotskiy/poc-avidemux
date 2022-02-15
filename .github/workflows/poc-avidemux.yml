@@ -4,7 +4,7 @@ jobs:
   PoC-AviDemux:
     runs-on: ubuntu-latest  # jlesage/avidemux:v1.4.0
     container:
-      image: dockerhub_org/jlesage/avidemux:v1.4.0
+      image: jlesage/avidemux:v1.4.0
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
