@@ -17,8 +17,8 @@ jobs:
       - run: mkdir "${GDRIVE_HOME}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_HOME}"/GDRIVE_SERVICE_ACCOUNT.json'
       - run: cat "${GDRIVE_HOME}"/GDRIVE_SERVICE_ACCOUNT.json
-      - run: echo "${PWD}" && ls -la
-      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload "${PWD}"/README.md
+      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json list
+#      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload "${PWD}"/README.md
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
 #      - run: ls -la ./source_video/
