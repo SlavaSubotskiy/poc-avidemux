@@ -3,7 +3,6 @@ on: [push]
 #on: [workflow_dispatch]
 jobs:
   PoC-AviDemux:
-    on: [workflow_dispatch]
     runs-on: ubuntu-latest  # jlesage/avidemux:v1.4.0
     container:
       image: jlesage/avidemux:v1.4.0
