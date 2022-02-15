@@ -1,5 +1,5 @@
 name: PoC AviDemux
-on: [push]
+on: [workflow_dispatch]
 jobs:
   PoC-AviDemux:
     runs-on: ubuntu-latest  # jlesage/avidemux:v1.4.0
