@@ -9,21 +9,9 @@ jobs:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
       GDRIVE_PARENT_FOLDER: 1ZWvA_FvC1GrHcDg8hdid6NsgLLqljvFn
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls -la $GITHUB_WORKSPACE
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
-      - run: mkdir source_video
-      - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > ./.GDRIVE_SERVICE_ACCOUNT.json'
-      - run: ls -la && pwd && echo $PWD
-      - run: ./gdrive --service-account $PWD/.GDRIVE_SERVICE_ACCOUNT.json upload -p "${GDRIVE_PARENT_FOLDER}" README.md
+      - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > $HOME/.gdrive/GDRIVE_SERVICE_ACCOUNT.json'
+      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload -p "${GDRIVE_PARENT_FOLDER}" README.md
+#      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
 #      - run: ls -la ./source_video/
