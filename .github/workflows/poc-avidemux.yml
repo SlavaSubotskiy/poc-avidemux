@@ -8,7 +8,7 @@ jobs:
     env:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
       GDRIVE_PARENT_FOLDER: 1ZWvA_FvC1GrHcDg8hdid6NsgLLqljvFn
-      GDRIVE_HOME: ${{ env.HOME }}/.gdrive
+      GDRIVE_HOME: ${{ HOME }}/.gdrive
     steps:
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
       - run: mkdir ${GDRIVE_HOME}
