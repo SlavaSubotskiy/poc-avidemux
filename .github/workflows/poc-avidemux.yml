@@ -25,7 +25,8 @@ jobs:
           -d client_secret=$GDRIVE_CLIENT_SECRET \
           -d device_code=$GDRIVE_DEVICE_CODE \
           -d grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Adevice_code https://accounts.google.com/o/oauth2/token` && \
-          GDRIVE_ACCESS_TOKEN=`echo $GDRIVE_BEARER | jq -r '.access_token'`
+          GDRIVE_ACCESS_TOKEN=`echo $GDRIVE_BEARER | jq -r '.access_token'` && \
+          $GDRIVE_ACCESS_TOKEN
       - run: echo $GDRIVE_ACCESS_TOKEN
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
 #      - run: ls -la ./source_video/
