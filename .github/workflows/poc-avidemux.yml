@@ -17,7 +17,9 @@ jobs:
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
       - run: mkdir "${GDRIVE_CONFIG_DIR}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_CONFIG_DIR}"/GDRIVE_SERVICE_ACCOUNT.json'
-      - run: ./gdrive ${GDRIVE_SA} list
+#      - run: ./gdrive ${GDRIVE_SA} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
+      - run: ./gdrive download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
+      - run: ls -l
 #      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload "${PWD}"/README.md
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
