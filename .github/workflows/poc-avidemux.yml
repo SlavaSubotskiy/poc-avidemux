@@ -10,17 +10,18 @@ jobs:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
       GDRIVE_PARENT_FOLDER: 1JuKjye9zRNCFuB37Mi2XHXMC6zqyGXhE
       GDRIVE_CONFIG_DIR: /github/home/.gdrive
-      GDRIVE_SA: --service-account GDRIVE_SERVICE_ACCOUNT.json
+      GDRIVE_SA_ARG: --service-account GDRIVE_SERVICE_ACCOUNT.json
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz -O - | tar -xzvf -
       - run: mkdir "${GDRIVE_CONFIG_DIR}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_CONFIG_DIR}"/GDRIVE_SERVICE_ACCOUNT.json'
-#      - run: ./gdrive ${GDRIVE_SA} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
-      - run: ./gdrive ${GDRIVE_SA} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
+#      - run: ./gdrive ${GDRIVE_SA_ARG} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
+      - run: ./gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
       - run: ls -l
-#      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload "${PWD}"/README.md
+      - run: avidemux3_cli --run ./BW7/cut.py --save part.mp4 --nogui
+      - run: ./gdrive ${GDRIVE_SA_ARG} upload "${PWD}"/part.mp4
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
 #      - run: ls -la ./source_video/
