@@ -21,7 +21,7 @@ jobs:
       - run: ./gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
       - run: ls -l
       - run: avidemux3_cli --run ./BW7/cut.py --save part.mp4 --nogui
-      - run: ./gdrive ${GDRIVE_SA_ARG} upload "${PWD}"/part.mp4
+      - run: ./gdrive ${GDRIVE_SA_ARG} upload -p 1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSM "${PWD}"/part.mp4
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
 #      - run: ls -la ./source_video/
