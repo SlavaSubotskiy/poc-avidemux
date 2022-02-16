@@ -18,7 +18,7 @@ jobs:
       - run: mkdir "${GDRIVE_CONFIG_DIR}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_CONFIG_DIR}"/GDRIVE_SERVICE_ACCOUNT.json'
 #      - run: ./gdrive ${GDRIVE_SA} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
-      - run: ./gdrive download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
+      - run: ./gdrive ${GDRIVE_SA} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
       - run: ls -l
 #      - run: ./gdrive --service-account GDRIVE_SERVICE_ACCOUNT.json upload "${PWD}"/README.md
 #      - run: mkdir source_video
