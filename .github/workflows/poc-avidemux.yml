@@ -3,9 +3,9 @@ on: [push]
 #on: [workflow_dispatch]
 jobs:
   PoC-AviDemux:
-    runs-on: ubuntu-latest  # jlesage/avidemux:v1.4.0
+    runs-on: ubuntu-latest
     container:
-      image: jlesage/avidemux:v1.4.0
+      image: ghcr.io/slavasubotskiy/avidemux:2.8.0
     env:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
       GDRIVE_PARENT_FOLDER: 1JuKjye9zRNCFuB37Mi2XHXMC6zqyGXhE
@@ -18,9 +18,10 @@ jobs:
       - run: mkdir "${GDRIVE_CONFIG_DIR}"
       - run: 'echo "${GDRIVE_SERVICE_ACCOUNT}" > "${GDRIVE_CONFIG_DIR}"/GDRIVE_SERVICE_ACCOUNT.json'
 #      - run: ./gdrive ${GDRIVE_SA_ARG} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
+      - run: cd ./BW7
       - run: ./gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
       - run: ls -l
-      - run: avidemux3_cli --run ./BW7/cut.py --save part.mp4 --nogui
+      - run: avidemux3_cli --run cut.py --save part.mp4 --nogui
       - run: ./gdrive ${GDRIVE_SA_ARG} upload -p 1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSM "${PWD}"/part.mp4
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
