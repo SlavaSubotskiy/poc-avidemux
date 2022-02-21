@@ -20,7 +20,7 @@ jobs:
 #      - run: ./gdrive ${GDRIVE_SA_ARG} list --query "'1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSN' in parents"
       - run: |
           cd ./BW7
-          ./gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
+          ../gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
           ls -l
           avidemux3_cli --run cut.py --save part.mp4 --nogui
           ./gdrive ${GDRIVE_SA_ARG} upload -p 1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSM "${PWD}"/part.mp4
