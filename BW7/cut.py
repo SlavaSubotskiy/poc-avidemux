@@ -2,10 +2,10 @@
 #--automatically built--
 
 adm = Avidemux()
-start = 1033600000
-end = 1996000000
-adm.markerA = start
-adm.markerB = end
+adm.clearSegments()
+adm.addSegment(0, 40000, 1996000000)
+adm.markerA = 1033600000
+adm.markerB = 1996000000
 adm.videoCodec("x264", "useAdvancedConfiguration=True", "general.params=AQ=21", "general.threads=0", "general.preset=ultrafast", "general.tuning=none", "general.profile=high", "general.fast_decode=False", "general.zero_latency=False"
                , "general.fast_first_pass=True", "general.blueray_compatibility=False", "general.fake_interlaced=False", "level=-1", "vui.sar_height=1", "vui.sar_width=1", "MaxRefFrames=3", "MinIdr=25", "MaxIdr=250"
                , "i_scenecut_threshold=40", "intra_refresh=False", "MaxBFrame=3", "i_bframe_adaptive=1", "i_bframe_bias=0", "i_bframe_pyramid=2", "b_deblocking_filter=True", "i_deblocking_filter_alphac0=0", "i_deblocking_filter_beta=0"
