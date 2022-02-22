@@ -5,7 +5,7 @@ jobs:
   PoC-AviDemux:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/slavasubotskiy/avidemux:2.8.0
+      image: jlesage/avidemux:v1.4.0  # ghcr.io/slavasubotskiy/avidemux:2.8.0
     env:
       GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
       GDRIVE_PARENT_FOLDER: 1JuKjye9zRNCFuB37Mi2XHXMC6zqyGXhE
