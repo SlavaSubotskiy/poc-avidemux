@@ -2,7 +2,7 @@
 #--automatically built--
 
 adm = Avidemux()
-start = 1996000000
+start = 1033600000
 end = 1996000000
 adm.markerA = start
 adm.markerB = end
@@ -15,8 +15,8 @@ adm.videoCodec("x264", "useAdvancedConfiguration=True", "general.params=AQ=21", 
                , "analyze.dct_decimate=True", "analyze.noise_reduction=0", "analyze.psy=True", "analyze.intra_luma=11", "analyze.inter_luma=21", "ratecontrol.rc_method=0", "ratecontrol.qp_constant=0", "ratecontrol.qp_min=10"
                , "ratecontrol.qp_max=51", "ratecontrol.qp_step=4", "ratecontrol.bitrate=0", "ratecontrol.rate_tolerance=1.000000", "ratecontrol.vbv_max_bitrate=0", "ratecontrol.vbv_buffer_size=0", "ratecontrol.vbv_buffer_init=1"
                , "ratecontrol.ip_factor=1.400000", "ratecontrol.pb_factor=1.300000", "ratecontrol.aq_mode=1", "ratecontrol.aq_strength=1.000000", "ratecontrol.mb_tree=True", "ratecontrol.lookahead=5")
-#adm.addVideoFilter("fadeToBlack", "startFade=1033600", "endFade=1034600", "inOut=True", "toBlack=True")
-#adm.addVideoFilter("fadeToBlack", "startFade=1994000", "endFade=1996000", "inOut=False", "toBlack=True")
+adm.addVideoFilter("fadeToBlack", "startFade=1033600", "endFade=1034600", "inOut=True", "toBlack=True")
+adm.addVideoFilter("fadeToBlack", "startFade=1994000", "endFade=1996000", "inOut=False", "toBlack=True")
 adm.audioClearTracks()
 adm.setSourceTrackLanguage(0,"und")
 if adm.audioTotalTracksCount() <= 0:
