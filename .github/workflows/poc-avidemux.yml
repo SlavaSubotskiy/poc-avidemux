@@ -22,7 +22,7 @@ jobs:
           cd ./BW7
           ../gdrive ${GDRIVE_SA_ARG} download 1UCrWLga4Pu5fECXfL3pazztvgzFetfp9
           ls -l
-          avidemux3_cli --run cut.py --save part.mp4 --nogui
+          avidemux3_cli --load 2002-0505\ Sahasrara\ Puja\ Talk\ Cabella,\ Italy\ DP\ CC.mp4 --run cut.py --save part.mp4 --nogui
           ./gdrive ${GDRIVE_SA_ARG} upload -p 1tENO1dseB9PqkbmFF4rwlKF_Ux3GxUSM "${PWD}"/part.mp4
 #      - run: mkdir source_video
 #      - run: gdown --fuzzy 'https://drive.google.com/file/d/1JqJTKToAfPhMb6l4VfB7eretVuZdwHHR/view' -O ./source_video/12002-05-05-Sahasrara-Puja-Talk.mp4
